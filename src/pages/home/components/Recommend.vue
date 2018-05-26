@@ -4,7 +4,7 @@
       热销推荐
     </div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl"/>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -19,46 +19,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1707/c7/c7f3baa7a5094e3ca3.img.jpg_200x200_1e7123ce.jpg',
-          title: '三亚海上观光巴士',
-          desc: '听小编说哟，据说帅的人都去过了'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1707/c7/c7f3baa7a5094e3ca3.img.jpg_200x200_1e7123ce.jpg',
-          title: '三亚海上观光巴士',
-          desc: '听小编说哟，据说帅的人都去过了'
-        },
-        {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1707/c7/c7f3baa7a5094e3ca3.img.jpg_200x200_1e7123ce.jpg',
-          title: '三亚海上观光巴士',
-          desc: '听小编说哟，据说帅的人都去过了'
-        }, {
-          id: '0004',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1707/c7/c7f3baa7a5094e3ca3.img.jpg_200x200_1e7123ce.jpg',
-          title: '三亚海上观光巴士',
-          desc: '听小编说哟，据说帅的人都去过了'
-        },
-        {
-          id: '0005',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1707/c7/c7f3baa7a5094e3ca3.img.jpg_200x200_1e7123ce.jpg',
-          title: '三亚海上观光巴士',
-          desc: '听小编说哟，据说帅的人都去过了'
-        },
-        {
-          id: '0006',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1707/c7/c7f3baa7a5094e3ca3.img.jpg_200x200_1e7123ce.jpg',
-          title: '三亚海上观光巴士',
-          desc: '听小编说哟，据说帅的人都去过了'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -66,7 +28,6 @@ export default {
 <style lang="stylus" scoped>
   @import "~styles/mixins.styl"
   .title
-    margin-top .2rem
     line-height .8rem
     background #eee
     text-indent .2rem

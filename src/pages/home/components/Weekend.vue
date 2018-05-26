@@ -4,7 +4,7 @@
       周末去哪呀
     </div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl"/>
         </div>
@@ -20,29 +20,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/a4/df8543b6b8506d.jpg_r_640x214_660e1e3a.jpg',
-          title: '就是要看海',
-          desc: '海上摩托，拖曳伞什么的爽歪歪了'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/a4/df8543b6b8506d.jpg_r_640x214_660e1e3a.jpg',
-          title: '就是要看海',
-          desc: '海上摩托，拖曳伞什么的爽歪歪了'
-        },
-        {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/a4/df8543b6b8506d.jpg_r_640x214_660e1e3a.jpg',
-          title: '就是要看海',
-          desc: '海上摩托，拖曳伞什么的爽歪歪了'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
