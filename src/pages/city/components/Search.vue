@@ -93,4 +93,5 @@ export default {
       line-height .62rem
       padding-left .2rem
       color #666
+      background #fff
 </style>
