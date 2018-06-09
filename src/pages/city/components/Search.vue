@@ -7,7 +7,9 @@
     <ul>
       <li
         class="search-item border-bottom"
-        v-for="item of list" :key="item.id"
+        v-for="item of list"
+        :key="item.id"
+        @click="handleCityClick(item.name)"
       >{{item.name}}</li>
       <li class="search-item border-bottom" v-show="noData">没有搜索到结果</li>
     </ul>
@@ -39,7 +41,6 @@ export default {
         return
       }
       this.timer = setTimeout(() => {
-        console.log(this.cities)
         const result = []
         for (let i in this.cities) {
           this.cities[i].forEach((value) => {
@@ -60,6 +61,13 @@ export default {
   computed: {
     noData () {
       return !this.list.length
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      // this.$store.dispatch('changeCity', city)
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
     }
   }
 }
