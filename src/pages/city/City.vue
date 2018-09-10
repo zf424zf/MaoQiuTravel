@@ -4,6 +4,7 @@
     <city-search :cities="cities"></city-search>
     <city-list :cities="cities" :hot="hotCities" :letter="letter"></city-list>
     <city-alphabet :cities="cities" @clickLetter="handleClickLetter"></city-alphabet>
+    <h1 v-bind:title=test></h1>
   </div>
 </template>
 
@@ -25,7 +26,8 @@ export default {
     return {
       cities: {},
       hotCities: [],
-      letter: ''
+      letter: '',
+      test: 'haha'
     }
   },
   methods: {
